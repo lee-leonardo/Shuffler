@@ -43,12 +43,7 @@ def shuffleList2 ( listToShuffle, repeat ):
 
 	return listToShuffle
 
-print shuffleList2 ( capList, 7 )
-print shuffleList2 ( numList, 7 )
-print shuffleList2 ( singleSuite, 9 )
-
 ######################################
-
 
 #Shuffle any amount of cards
 def shuffleN ( listToShuffle, numStack ):
@@ -60,11 +55,12 @@ def shuffleN ( listToShuffle, numStack ):
 		stack.append( [] )
 		iteration += 1
 
-	while listToShuffle:
-		pass
-		#stack[stackNum].append(listToShuffle)
-		#if stackNum <= numStack:
-			#stackNum += 1
+	#while listToShuffle:
+	#	stack[stackNum].append( listToShuffle.pop() )
+	#	if stackNum < numStack:
+	#		stackNum += 1
+	#	else:
+	#		stackNum = 0
 
 	listToShuffle.extend(stack)
 	return listToShuffle
@@ -73,12 +69,19 @@ def shuffler( listToShuffle, repeat, numStack):
 	timesShuffled = 0
 	while timesShuffled <= repeat:
 		#This is the code used to make the stacks shuffle.
-		#shuffleN( listToShuffle, numStack)
+		shuffleN( listToShuffle, numStack)
 		timesShuffled += 1
 
 	return listToShuffle
 
 
+########################################
+#Testing area
+print "Original Shuffler program"
+print shuffleList2 ( capList, 7 )
+
+print "New shuffler program"
+print shuffler( capList, 7, 3 )
 
 
 
